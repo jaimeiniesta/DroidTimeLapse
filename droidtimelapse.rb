@@ -1,5 +1,5 @@
 ##########################################################################
-# DroidStopMotion
+# DroidTimeLapse
 # A tiny little script to take photos from android on a specified interval
 ##########################################################################
 
@@ -9,7 +9,7 @@ SETUP_WAIT = 10
 
 # Ask user for instructions
 # Welcome screen
-puts "### DroidStopMotion ###\n"
+puts "### DroidTimeLapse ###\n"
 
 # Number of seconds to wait after each picture
 puts "How many seconds should I wait after each photo?"
@@ -33,7 +33,7 @@ album_name = Time.now.strftime('%Y/%m/%d/%H_%M')
 counter = 0
 NUM_PICTURES.times do
   puts "Taking picture #{counter += 1}..."
-  snapshot_path = File.join APP_DIR, "droidstopmotion/albums/#{album_name}/#{Time.now.strftime('%Y%m%d_%H%M%S')}.jpg"
+  snapshot_path = File.join APP_DIR, "droidtimelapse/albums/#{album_name}/#{Time.now.strftime('%Y%m%d_%H%M%S')}.jpg"
   DROID.cameraCapturePicture snapshot_path
   
   puts "#{NUM_PICTURES - counter} pictures remaining. Sleeping #{WAIT} seconds..."
